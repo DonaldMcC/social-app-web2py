@@ -19,6 +19,8 @@ auth.define_tables(username=True)
 # Disable certain auth actions unless you're also using web2py account registration
 auth.settings.actions_disabled = ['register', 'change_password', 'request_reset_password']
 
+auth.settings.logout_next = URL(args=request.args, vars=request.get_vars)
+
 # Make user props readonly since these will automatically be updated
 # when the user logs on with a new social account anyway.
 # NOTE: this fails when lazy tables used.

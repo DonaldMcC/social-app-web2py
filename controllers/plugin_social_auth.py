@@ -24,3 +24,7 @@ def index():
     if index_url:
         redirect(index_url)
 
+@auth.requires_login()
+def test_require():
+    # Test if normal page with login flows through
+    return locals

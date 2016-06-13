@@ -3,7 +3,7 @@ from social.strategies.base import BaseTemplateStrategy
 from gluon.globals import current
 from gluon.http import redirect
 
-#FIXME Not sure yet how this is used and how to implement it.
+#FIXME Not sure yet how this is used and how to implement it
 class W2PTemplateStrategy(BaseTemplateStrategy):
     def render_template(self, tpl, context):
         return tpl
