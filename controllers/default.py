@@ -39,6 +39,12 @@ def user():
     """
     return dict(form=auth())
 
+@auth.requires_login()
+def require():
+    # Test if normal page with login flows through
+    bla=1
+    return dict(bla=bla)    
+    
 @cache.action()
 def download():
     """

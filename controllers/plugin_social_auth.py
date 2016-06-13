@@ -14,6 +14,7 @@ def complete():
                            user=get_current_user())
     except Exception as e:
         process_exception(e)
+    return
 
 def user():
     return auth()
@@ -24,7 +25,3 @@ def index():
     if index_url:
         redirect(index_url)
 
-@auth.requires_login()
-def test_require():
-    # Test if normal page with login flows through
-    return locals
