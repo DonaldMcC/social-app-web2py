@@ -80,8 +80,8 @@ class W2PStrategy(BaseStrategy):
 
         return self.request.env.wsgi_url_scheme + '://' + host + (path or '')
 
-    def authenticate(self, backend, *args, **kwargs):
-        kwargs['strategy'] = self
-        kwargs['storage'] = self.storage
-        kwargs['backend'] = backend
-        return
+    #def authenticate(self, backend, *args, **kwargs):
+    #    kwargs['strategy'] = self
+    #    kwargs['storage'] = self.storage
+    #    kwargs['backend'] = backend
+    #    return
