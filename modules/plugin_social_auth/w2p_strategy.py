@@ -84,4 +84,4 @@ class W2PStrategy(BaseStrategy):
         kwargs['strategy'] = self
         kwargs['storage'] = self.storage
         kwargs['backend'] = backend
-        return authenticate(*args, **kwargs)
+        return
