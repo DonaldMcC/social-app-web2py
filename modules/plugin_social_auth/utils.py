@@ -15,7 +15,6 @@ from gluon.validators import IS_URL
 from gluon.utils import web2py_uuid
 from urlparse import urlparse
 
-#BACKENDS = current.plugin_social_auth.plugin.AUTHENTICATION_BACKENDS
 
 def verify(f):
     """
@@ -471,7 +470,7 @@ def url_for(uri, backend):
 
     
 def load_backend(strategy, name, redirect_uri):
-    Backend = get_backend(getattr(current.plugin_social_auth.plugin, setting_name('SOCIAL_AUTH_AUTHENTICATION_BACKENDS')), name)
+    Backend = get_backend(current.plugin_social_auth.plugin.SOCIAL_AUTH_AUTHENTICATION_BACKENDS, name) 
     return Backend(strategy, redirect_uri)
     
 def psa(redirect_uri=None, load_strategy=load_strategy):
