@@ -471,9 +471,8 @@ def url_for(uri, backend):
 
     
 def load_backend(strategy, name, redirect_uri):
-    Backend = get_backend(getattr(current.plugin_social_auth.plugin, setting_name('AUTHENTICATION_BACKENDS')), name)
+    Backend = get_backend(getattr(current.plugin_social_auth.plugin, setting_name('SOCIAL_AUTH_AUTHENTICATION_BACKENDS')), name)
     return Backend(strategy, redirect_uri)
-
     
 def psa(redirect_uri=None, load_strategy=load_strategy):
     def decorator(func):
