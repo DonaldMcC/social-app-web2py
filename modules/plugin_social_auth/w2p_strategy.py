@@ -14,7 +14,7 @@ class W2PTemplateStrategy(BaseTemplateStrategy):
 
 class W2PStrategy(BaseStrategy):
     DEFAULT_TEMPLATE_STRATEGY = W2PTemplateStrategy
-    def __init__(self, storage, request=None, tpl=None):
+    def __init__(self, storage, request=current.request, tpl=None):
         self.request=request
         self.session = current.plugin_social_auth.s
         self.plugin = current.plugin_social_auth.plugin
