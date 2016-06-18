@@ -487,6 +487,9 @@ def psa(redirect_uri=None, load_strategy=load_strategy):
                 usa = UserSocialAuth.get_social_auth_for_user(association_id=association_id)
                 if usa and len(usa) > 0:
                     backend = usa[0].provider
+            #TODO will need to sort this later - see if works first
+            if not backend:
+                backend='facebook'
 
             current.strategy = load_strategy(request=r)
             current.backend = load_backend(current.strategy, backend, uri)
