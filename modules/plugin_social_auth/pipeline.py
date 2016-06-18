@@ -6,7 +6,7 @@ from utils import verifiable_redirect
 def partial(func):
     @wraps(func)
     def wrapper(strategy, pipeline_index, *args, **kwargs):
-        values = strategy.partial_to_session(pipeline_index, *args, **kwargs)
+        values = current.strategy.partial_to_session(pipeline_index, *args, **kwargs)
         strategy.session_set('partial_pipeline', values)
         return func(strategy, pipeline_index, *args, **kwargs)
     return wrapper
@@ -19,7 +19,7 @@ def disconnect(strategy, entries, user_storage, on_disconnected=None,  *args, **
 def associate_user(backend, uid, user=None, social=None, *args, **kwargs):
     assoc = assoc_user(backend, uid, user=user, social=social, *args, **kwargs)
     if assoc:
-        providers = strategy.get_setting('SOCIAL_AUTH_PROVIDERS')
+        providers = backend.get_setting('SOCIAL_AUTH_PROVIDERS')
         key = strategy.backend.name
         display_name = key in providers and providers[key]
 
