@@ -416,7 +416,7 @@ class W2pExceptionHandler(object):
             return ex.__class__.__module__ in('social.exceptions', SocialAuthBaseException.__module__)
 
         if is_social_auth_exception(exception):
-            backend_name = self.strategy.backend.name
+            backend_name = current.session.backend
             message = exception.message
 
             logging.error("[social_auth] backend: %s | message: %s" % (backend_name, message))
@@ -481,17 +481,14 @@ def psa(redirect_uri=None, load_strategy=load_strategy):
             r = current.request
             print('backend', r.vars.backend)
             uri = redirect_uri
-            backend = r.vars.backend
-            #backend = current.session.backend
+            #backend = r.vars.backend
+            backend = current.session.backend
             association_id = r.vars.association_id
 
             if association_id and not backend:
                 usa = UserSocialAuth.get_social_auth_for_user(association_id=association_id)
                 if usa and len(usa) > 0:
                     backend = usa[0].provider
-            #TODO will need to sort this later - see if works first
-            if not backend:
-                backend='facebook'
 
             current.strategy = load_strategy(request=r)
             current.backend = load_backend(current.strategy, backend, uri)
