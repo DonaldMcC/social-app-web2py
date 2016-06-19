@@ -1,0 +1,3 @@
+# w2p-social-auth
+The master branch of this is now just a scaled back version of the original w2p-social-auth without version 0.1.24 included in the plugin.  This was erroneously believed to have been tweaked to work with latest version of psa - however this turned out not to be the case as a version 0.1.26 was still lurking in site packages and it looks like it is not wortwhile to make a version that works with all psa versions.  So instead a new branch psa0219 has been created and some of the changes required have been worked through and looks like I again have a login using mozilla persona.  Further work on this is planned for the next few weeks.
+
