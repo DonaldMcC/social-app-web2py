@@ -313,6 +313,7 @@ class SocialAuth(Auth):
         form2 = self.__openid_form()
 
         if form1.process(formname='form_one').accepted or form2.process(formname='form_two').accepted:
+            current.session.backend = current.request.vars.backend
             return _auth()
 
         return dict(form=DIV(H4(current.plugin_social_auth.T('Choose your provider:')),
@@ -481,6 +482,7 @@ def psa(redirect_uri=None, load_strategy=load_strategy):
             print('backend', r.vars.backend)
             uri = redirect_uri
             backend = r.vars.backend
+            #backend = current.session.backend
             association_id = r.vars.association_id
 
             if association_id and not backend:
