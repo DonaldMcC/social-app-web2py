@@ -65,7 +65,9 @@ plugins.social_auth.SOCIAL_AUTH_AUTHENTICATION_BACKENDS = (
     # It must _not_ be configured in SOCIAL_AUTH_PROVIDERS (below)
     'social.backends.twitter.TwitterOAuth',
     'social.backends.facebook.FacebookOAuth2',
-    'social.backends.persona.PersonaAuth')
+    'social.backends.persona.PersonaAuth',
+    'social.backends.amazon.AmazonOAuth2',
+    'social.backends.live.LiveOAuth2')
 # Configure the providers that you want to show in the login form.
 # <backend name> : <display name>
 # (You can find the backend name in the backend files as configured above.)
@@ -80,7 +82,9 @@ plugins.social_auth.SOCIAL_AUTH_AUTHENTICATION_BACKENDS = (
 plugins.social_auth.SOCIAL_AUTH_PROVIDERS = {
     'twitter': 'Twitter',
     'facebook': 'Facebook',
-    'persona': 'Mozilla Persona'}
+    'persona': 'Mozilla Persona',
+    'amazon': 'Amazon',
+    'live': 'Live'}
 # Configure app index URL. This is where you are redirected after logon when
 # auth.settings.logout_next is not configured.
 # If both are not configured there may be no redirection after logout! (returns 'None')
@@ -101,4 +105,3 @@ plugins.social_auth.SOCIAL_AUTH_ENABLE_PERSONA = True
 
 # Uncomment this line to remove icons from buttons
 # plugins.social_auth.SOCIAL_AUTH_UI_ICONS = False
-
