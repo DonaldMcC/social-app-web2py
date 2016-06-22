@@ -44,7 +44,9 @@ plugins.social_auth.SOCIAL_AUTH_GOOGLE_PLUS_KEY = myconf.take('psa.google_client
 plugins.social_auth.SOCIAL_AUTH_GOOGLE_PLUS_SECRET = myconf.take('psa.google_client_secret')
 plugins.social_auth.SOCIAL_AUTH_LIVE_KEY = myconf.take('psa.live_key')
 plugins.social_auth.SOCIAL_AUTH_LIVE_SECRET = myconf.take('psa.live_secret')
-plugins.social_auth.SOCIAL_AUTH_LIVE_LOGIN_REDIRECT_URL = 'http://127.0.0.1:8080/w2pruned/logged-in/'
+plugins.social_auth.SOCIAL_AUTH_AMAZON_KEY = myconf.take('psa.amazon_key')
+plugins.social_auth.SOCIAL_AUTH_AMAZON_SECRET = myconf.take('psa.amazon_secret')
+plugins.social_auth.SOCIAL_AUTH_LIVE_LOGIN_REDIRECT_URL = 'http://127.0.0.1:8080/w2platest/logged-in/'
 
 
 # Configure PSA with all required backends
