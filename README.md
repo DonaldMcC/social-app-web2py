@@ -3,7 +3,7 @@ This project is to develop a working adaptor for web2py to work with the revised
 
 The previous w2p-social-auth is now deprecated and development will take place on this repostory at least until working. In due course it is hoped this repository can then be adopted by python-social-auth.
 
-Current status is that this appears to work withe version 0.0.1 of social-auth-core but errors on pipeline arguments with later releases.
+Current status is that this appears to work withe version 0.0.1 of social-auth-core but errors on pipeline arguments with later releases.  This REPOSITORY is OBSOLETE - I ended up updating previous one http://DonaldMcC/w2p-social-auth and it now works fine with v1.4.0 of social_auth_core and is the better place to start anything else
 
 
 # w2p-social-auth 
